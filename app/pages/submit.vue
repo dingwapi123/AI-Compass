@@ -25,19 +25,19 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div class="max-w-2xl space-y-6">
+  <div class="max-w-2xl space-y-6 text-slate-900 dark:text-slate-50 transition-colors">
     <div class="space-y-2">
-      <h1 class="text-3xl font-semibold text-slate-900">提交产品 / 资讯线索</h1>
-      <p class="text-slate-600">
+      <h1 class="text-3xl font-semibold text-slate-900 dark:text-white">提交产品 / 资讯线索</h1>
+      <p class="text-slate-600 dark:text-slate-300">
         你的提交将进入审核队列（当前为示例，本地存储）。建议附上官网链接和简短描述。
       </p>
     </div>
 
-    <UCard>
+    <UCard class="dark:border-slate-800 dark:bg-slate-900/70">
       <form class="space-y-4" @submit.prevent="handleSubmit">
         <div class="grid gap-4 sm:grid-cols-2">
           <UFormGroup label="类型" name="type">
-            <USelect v-model="form.type" :options="optionsType" />
+            <USelect v-model="form.type" :options="optionsType" color="primary" />
           </UFormGroup>
           <UFormGroup label="官网链接" name="url" required>
             <UInput v-model="form.url" placeholder="https://example.com" type="url" required />
@@ -61,7 +61,7 @@ const handleSubmit = () => {
         </UFormGroup>
 
         <div class="flex items-center justify-between">
-          <p class="text-xs text-slate-500">
+          <p class="text-xs text-slate-500 dark:text-slate-400">
             提交后将进入审核（真实环境会写入 Supabase submissions）。
           </p>
           <UButton type="submit" icon="i-heroicons-paper-airplane" color="primary">
