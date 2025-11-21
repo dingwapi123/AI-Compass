@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp class="min-h-screen">
     <NuxtRouteAnnouncer />
     <NuxtLayout>
       <NuxtPage />
