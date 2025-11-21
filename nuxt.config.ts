@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
+  css: ['~/assets/css/main.css'],
   app: {
     head: {
       title: 'AI Compass — AI 资讯与产品导航',
@@ -13,9 +14,7 @@ export default defineNuxtConfig({
     }
   },
   ui: {
-    fonts: {
-      // 避免远程拉取 Google Fonts，改在本地/自行托管
-      provider: 'none'
-    }
+    // 禁用自动字体拉取，规避 Google Fonts 网络警告
+    fonts: false
   }
 })
